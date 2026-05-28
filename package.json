@@ -1,0 +1,17 @@
+{
+  "name": "react-router-examples",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier --write . && pnpm lint --fix",
+    "lint": "eslint --no-eslintrc --config .eslintrc.js ."
+  },
+  "devDependencies": {
+    "prettier": "^3.8.3",
+    "react": "^19.2.6",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
