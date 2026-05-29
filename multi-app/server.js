@@ -12,7 +12,8 @@ async function createServer() {
   let vite;
 
   if (!isProduction) {
-    vite = await require("vite").createServer({
+    let { createServer: createViteServer } = await import("vite");
+    vite = await createViteServer({
       root: process.cwd(),
       server: { middlewareMode: true },
       appType: "custom",

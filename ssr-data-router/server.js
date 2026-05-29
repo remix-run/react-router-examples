@@ -17,7 +17,8 @@ async function createServer() {
   let vite;
 
   if (!isProduction) {
-    vite = await require("vite").createServer({
+    let { createServer: createViteServer } = await import("vite");
+    vite = await createViteServer({
       root,
       server: { middlewareMode: "ssr" },
     });
@@ -46,7 +47,9 @@ async function createServer() {
           resolve("dist/client/index.html"),
           "utf8",
         );
-        render = require(resolve("dist/server/entry.server.js")).render;
+        render = await import(resolve("dist/server/entry.server.mjs")).then(
+          (m) => m.render,
+        );
       }
 
       try {

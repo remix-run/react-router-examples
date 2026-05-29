@@ -1,5 +1,5 @@
-import type { RouteObject } from "react-router-dom";
-import { Outlet, Link, useLoaderData, redirect } from "react-router-dom";
+import type { RouteObject } from "react-router";
+import { Outlet, Link, useLoaderData, redirect } from "react-router";
 
 export const routes: RouteObject[] = [
   {
@@ -102,7 +102,7 @@ async function homeLoader() {
 }
 
 function Home() {
-  let data = useLoaderData();
+  let data = useLoaderData() as { data: string };
   return (
     <div>
       <h2>Home</h2>
@@ -125,7 +125,7 @@ async function dashboardLoader() {
 }
 
 function Dashboard() {
-  let data = useLoaderData();
+  let data = useLoaderData() as { data: string };
   return (
     <div>
       <h2>Dashboard</h2>

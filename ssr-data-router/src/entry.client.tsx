@@ -4,7 +4,7 @@ import {
   createBrowserRouter,
   matchRoutes,
   RouterProvider,
-} from "react-router-dom";
+} from "react-router";
 
 import { routes } from "./App";
 
@@ -21,7 +21,8 @@ async function hydrate() {
   if (lazyMatches && lazyMatches?.length > 0) {
     await Promise.all(
       lazyMatches.map(async (m) => {
-        let routeModule = await m.route.lazy!();
+        let lazy = m.route.lazy as () => Promise<Record<string, unknown>>;
+        let routeModule = await lazy();
         Object.assign(m.route, { ...routeModule, lazy: undefined });
       }),
     );
@@ -32,7 +33,7 @@ async function hydrate() {
   ReactDOM.hydrateRoot(
     document.getElementById("app")!,
     <React.StrictMode>
-      <RouterProvider router={router} fallbackElement={null} />
+      <RouterProvider router={router} />
     </React.StrictMode>,
   );
 }

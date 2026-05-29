@@ -1,4 +1,4 @@
-import { Routes, Route, useParams, Link, Outlet } from "react-router-dom";
+import { Routes, Route, useParams, Link, Outlet } from "react-router";
 import "./index.css";
 import { getMessageById, messages } from "./messages";
 import { NoMatch } from "./no-match";
