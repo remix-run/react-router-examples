@@ -1,12 +1,12 @@
-import type { LoaderFunctionArgs } from "react-router-dom";
+import type { LoaderFunctionArgs } from "react-router";
 import {
+  data,
   isRouteErrorResponse,
-  json,
   Link,
   Outlet,
   useLoaderData,
   useRouteError,
-} from "react-router-dom";
+} from "react-router";
 
 export function Fallback() {
   return <p>Performing initial data "load"</p>;
@@ -65,22 +65,22 @@ export function RootErrorBoundary() {
 
 export function projectLoader({ params }: LoaderFunctionArgs) {
   if (params.projectId === "unauthorized") {
-    throw json({ contactEmail: "administrator@fake.com" }, { status: 401 });
+    throw data({ contactEmail: "administrator@fake.com" }, { status: 401 });
   }
 
   if (params.projectId === "broken") {
     // Uh oh - in this flow we somehow didn't get our data nested under `project`
     // and instead got it at the root - this will cause a render error!
-    return json({
+    return {
       id: params.projectId,
       name: "Break Some Stuff",
       owner: "The Joker",
       deadline: "June 2022",
       cost: "FREE",
-    });
+    };
   }
 
-  return json({
+  return {
     project: {
       id: params.projectId,
       name: "Build Some Stuff",
@@ -88,11 +88,18 @@ export function projectLoader({ params }: LoaderFunctionArgs) {
       deadline: "June 2022",
       cost: "$5,000 USD",
     },
-  });
+  };
 }
 
 export function Project() {
-  let { project } = useLoaderData();
+  let { project } = useLoaderData() as {
+    project: {
+      name: string;
+      owner: string;
+      deadline: string;
+      cost: string;
+    };
+  };
 
   return (
     <>

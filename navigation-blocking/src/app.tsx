@@ -1,21 +1,18 @@
 import * as React from "react";
-import type {
-  unstable_Blocker as Blocker,
-  unstable_BlockerFunction as BlockerFunction,
-} from "react-router-dom";
-import { useActionData } from "react-router-dom";
+import type { Blocker, BlockerFunction } from "react-router";
+import { useActionData } from "react-router";
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  data,
   Form,
-  json,
   Link,
   Outlet,
   Route,
   RouterProvider,
   useBlocker,
   useLocation,
-} from "react-router-dom";
+} from "react-router";
 
 let router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,7 +22,7 @@ let router = createBrowserRouter(
       <Route path="two" element={<h2>Two</h2>} />
       <Route
         path="three"
-        action={() => json({ ok: true })}
+        action={() => data({ ok: true })}
         element={
           <>
             <h2>Three</h2>

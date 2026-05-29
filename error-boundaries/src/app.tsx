@@ -1,8 +1,7 @@
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
 
 import "./index.css";
 import {
-  Fallback,
   Layout,
   RootErrorBoundary,
   Project,
@@ -37,5 +36,5 @@ if (import.meta.hot) {
 }
 
 export default function App() {
-  return <RouterProvider router={router} fallbackElement={<Fallback />} />;
+  return <RouterProvider router={router} />;
 }

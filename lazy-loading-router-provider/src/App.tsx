@@ -4,7 +4,7 @@ import {
   createBrowserRouter,
   RouterProvider,
   useNavigation,
-} from "react-router-dom";
+} from "react-router";
 
 const router = createBrowserRouter([
   {
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-  return <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />;
+  return <RouterProvider router={router} />;
 }
 
 function Layout() {

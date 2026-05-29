@@ -7,15 +7,15 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "react": "^19",
-    "react-dom": "^19",
-    "react-router": "^0.0.0-experimental-56b72276e"
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-router": "^7.16.0"
   },
   "devDependencies": {
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@vitejs/plugin-react": "latest",
-    "typescript": "latest",
-    "vite": "latest"
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.14"
   }
 }

@@ -5,8 +5,8 @@ import {
   Link,
   useMatch,
   useResolvedPath,
-} from "react-router-dom";
-import type { LinkProps } from "react-router-dom";
+} from "react-router";
+import type { LinkProps } from "react-router";
 
 export default function App() {
   return (

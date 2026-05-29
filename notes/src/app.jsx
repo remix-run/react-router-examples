@@ -1,5 +1,5 @@
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router";
 
 import Root, { loader as rootLoader } from "./routes/root";
 import NewNote, { action as newNoteAction } from "./routes/new";

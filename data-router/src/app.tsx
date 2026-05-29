@@ -1,9 +1,8 @@
 import * as React from "react";
-import type { ActionFunctionArgs, LoaderFunctionArgs } from "react-router-dom";
+import type { ActionFunctionArgs, LoaderFunctionArgs } from "react-router";
 import {
   Await,
   createBrowserRouter,
-  defer,
   Form,
   Link,
   Outlet,
@@ -17,7 +16,7 @@ import {
   useParams,
   useRevalidator,
   useRouteError,
-} from "react-router-dom";
+} from "react-router";
 
 import type { Todos } from "./todos";
 import { addTodo, deleteTodo, getTodos } from "./todos";
@@ -62,7 +61,7 @@ if (import.meta.hot) {
 }
 
 export default function App() {
-  return <RouterProvider router={router} fallbackElement={<Fallback />} />;
+  return <RouterProvider router={router} />;
 }
 
 export function sleep(n: number = 500) {
@@ -328,7 +327,7 @@ const reject = (d: Error | string, ms: number) =>
   );
 
 export async function deferredLoader() {
-  return defer({
+  return {
     critical1: await resolve("Critical 1", 250),
     critical2: await resolve("Critical 2", 500),
     lazyResolved: Promise.resolve("Lazy Data immediately resolved - " + rand()),
@@ -336,7 +335,7 @@ export async function deferredLoader() {
     lazy2: resolve("Lazy 2", 1500),
     lazy3: resolve("Lazy 3", 2000),
     lazyError: reject(new Error("Kaboom!"), 2500),
-  });
+  };
 }
 
 export function DeferredPage() {

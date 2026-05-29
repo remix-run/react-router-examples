@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router";
 
 export async function loader() {
   await new Promise((r) => setTimeout(r, 500));

@@ -8,7 +8,7 @@ import {
   useLocation,
   useNavigate,
   useParams,
-} from "react-router-dom";
+} from "react-router";
 
 import { IMAGES, getImageById } from "./images";
 
@@ -233,7 +233,7 @@ type DialogProps = {
   onDismiss: () => void;
   "aria-label"?: string;
   "aria-labelledby"?: string;
-  initialFocusRef?: React.RefObject<HTMLElement>;
+  initialFocusRef?: React.RefObject<HTMLElement | null>;
 };
 
 function Dialog({

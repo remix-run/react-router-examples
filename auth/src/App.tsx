@@ -7,7 +7,7 @@ import {
   useLocation,
   Navigate,
   Outlet,
-} from "react-router-dom";
+} from "react-router";
 import { fakeAuthProvider } from "./auth";
 
 export default function App() {
@@ -127,7 +127,7 @@ function AuthStatus() {
   );
 }
 
-function RequireAuth({ children }: { children: JSX.Element }) {
+function RequireAuth({ children }: { children: React.JSX.Element }) {
   let auth = useAuth();
   let location = useLocation();
 

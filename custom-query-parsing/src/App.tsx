@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as JSURL from "jsurl";
-import type { NavigateOptions } from "react-router-dom";
-import { Routes, Route, Link, useSearchParams } from "react-router-dom";
+import type { NavigateOptions } from "react-router";
+import { Routes, Route, Link, useSearchParams } from "react-router";
 
 export default function App() {
   return (
@@ -47,7 +47,7 @@ function useQueryParam<T>(
   let [searchParams, setSearchParams] = useSearchParams();
   let paramValue = searchParams.get(key);
 
-  let value = React.useMemo(() => JSURL.parse(paramValue), [paramValue]);
+  let value = React.useMemo(() => JSURL.parse(paramValue) as T, [paramValue]);
 
   let setValue = React.useCallback(
     (newValue: T, options?: NavigateOptions) => {

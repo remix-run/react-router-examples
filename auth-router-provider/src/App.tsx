@@ -1,4 +1,4 @@
-import type { LoaderFunctionArgs } from "react-router-dom";
+import type { LoaderFunctionArgs } from "react-router";
 import {
   Form,
   Link,
@@ -11,7 +11,7 @@ import {
   useLocation,
   useNavigation,
   useRouteLoaderData,
-} from "react-router-dom";
+} from "react-router";
 import { fakeAuthProvider } from "./auth";
 
 const router = createBrowserRouter([
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
 
 export default function App() {
   return (
-    <RouterProvider router={router} fallbackElement={<p>Initial Load...</p>} />
+    <RouterProvider router={router} />
   );
 }
 

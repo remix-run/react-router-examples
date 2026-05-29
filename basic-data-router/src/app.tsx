@@ -2,7 +2,7 @@ import {
   createBrowserRouter,
   RouterProvider,
   useLoaderData,
-} from "react-router-dom";
+} from "react-router";
 
 import "./index.css";
 
@@ -18,7 +18,7 @@ let router = createBrowserRouter([
 ]);
 
 export default function App() {
-  return <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />;
+  return <RouterProvider router={router} />;
 }
 
 if (import.meta.hot) {

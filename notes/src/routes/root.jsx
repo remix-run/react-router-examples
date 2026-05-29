@@ -1,4 +1,4 @@
-import { useLoaderData, Link, Outlet } from "react-router-dom";
+import { useLoaderData, Link, Outlet } from "react-router";
 import { getNotes } from "../notes";
 
 export async function loader() {

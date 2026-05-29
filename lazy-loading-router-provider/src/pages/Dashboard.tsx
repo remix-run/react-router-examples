@@ -1,4 +1,4 @@
-import { Outlet, Link, useLoaderData } from "react-router-dom";
+import { Outlet, Link, useLoaderData } from "react-router";
 
 export function DashboardLayout() {
   return (

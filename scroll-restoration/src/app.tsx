@@ -1,5 +1,5 @@
 import * as React from "react";
-import type { Location, useMatches } from "react-router-dom";
+import type { Location, useMatches } from "react-router";
 import {
   createBrowserRouter,
   Link,
@@ -9,7 +9,7 @@ import {
   useLoaderData,
   useLocation,
   useNavigation,
-} from "react-router-dom";
+} from "react-router";
 
 import "./index.css";
 
@@ -47,7 +47,7 @@ if (import.meta.hot) {
 }
 
 export default function App() {
-  return <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />;
+  return <RouterProvider router={router} />;
 }
 
 function Layout() {
