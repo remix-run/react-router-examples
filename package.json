@@ -4,10 +4,10 @@
   "license": "MIT",
   "scripts": {
     "format": "prettier --write . && pnpm lint --fix",
-    "lint": "echo disabled for now ",
-    "_lint": "eslint --no-eslintrc --config .eslintrc.js ."
+    "lint": "oxlint ."
   },
   "devDependencies": {
+    "oxlint": "^1.66.0",
     "prettier": "^3.8.3",
     "react": "^19.2.6",
     "typescript": "^6.0.3"

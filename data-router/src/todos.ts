@@ -25,12 +25,8 @@ function initializeTodos(): Todos {
 export function getTodos(): Todos {
   let todos: Todos | null = null;
   try {
-    // @ts-expect-error OK to throw here since we're catching
-    todos = JSON.parse(localStorage.getItem(TODOS_KEY));
-  } catch (
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    e
-  ) {}
+    todos = JSON.parse(localStorage.getItem(TODOS_KEY)!);
+  } catch (e) {}
   if (!todos) {
     todos = initializeTodos();
   }

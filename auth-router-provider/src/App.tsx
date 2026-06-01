@@ -52,9 +52,7 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-  return (
-    <RouterProvider router={router} />
-  );
+  return <RouterProvider router={router} />;
 }
 
 function Layout() {
@@ -134,10 +132,7 @@ async function loginAction({ request }: LoaderFunctionArgs) {
   // Sign in and redirect to the proper destination if successful.
   try {
     await fakeAuthProvider.signin(username);
-  } catch (
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    e
-  ) {
+  } catch (e) {
     // Unused as of now but this is how you would handle invalid
     // username/password combinations - just like validating the inputs
     // above

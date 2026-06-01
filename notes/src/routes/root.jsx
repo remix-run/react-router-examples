@@ -17,7 +17,7 @@ export default function Root() {
         </p>
         <ul>
           {notes.map((note) => (
-            <li>
+            <li key={note.id}>
               <Link to={`/note/${note.id}`}>{note.title}</Link>
             </li>
           ))}
