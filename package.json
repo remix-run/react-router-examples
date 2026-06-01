@@ -3,7 +3,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "format": "prettier --write . && npm lint --fix",
+    "format": "prettier --write . && npm run lint --fix",
     "lint": "oxlint ."
   },
   "devDependencies": {
