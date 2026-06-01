@@ -170,11 +170,7 @@ const router = createBrowserRouter([
               <div>
                 {images.map((src, idx) => (
                   // Adds 'transitioning' class to the <a> during the transition
-                  <NavLink
-                    key={src}
-                    to={`/images/${idx}`}
-                    viewTransition
-                  >
+                  <NavLink key={src} to={`/images/${idx}`} viewTransition>
                     <p>Image Number {idx}</p>
                     <img src={src} alt={`Img ${idx}`} />
                   </NavLink>
@@ -192,7 +188,6 @@ const router = createBrowserRouter([
                   //     </div>
                   //   )}
                   // </NavLink>
-
                 ))}
               </div>
             </div>
@@ -248,9 +243,7 @@ function Nav() {
           </Link>{" "}
           <button
             style={{ display: "inline-block" }}
-            onClick={() =>
-              navigate("/loader", { viewTransition: true })
-            }
+            onClick={() => navigate("/loader", { viewTransition: true })}
           >
             via useNavigate
           </button>

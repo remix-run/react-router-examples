@@ -1,10 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  matchRoutes,
-  RouterProvider,
-} from "react-router";
+import { createBrowserRouter, matchRoutes, RouterProvider } from "react-router";
 
 import { routes } from "./App";
 

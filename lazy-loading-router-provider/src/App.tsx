@@ -38,9 +38,8 @@ const router = createBrowserRouter([
           {
             path: "messages",
             async lazy() {
-              let { dashboardMessagesLoader, DashboardMessages } = await import(
-                "./pages/Dashboard"
-              );
+              let { dashboardMessagesLoader, DashboardMessages } =
+                await import("./pages/Dashboard");
               return {
                 loader: dashboardMessagesLoader,
                 Component: DashboardMessages,
