@@ -24,6 +24,7 @@ Please see [our contribution guide](CONTRIBUTING.md).
 
 ## Older versions
 
-Examples on `main` use version 7. Prior version examples are archived into branches:
+Examples on `main` use version 8. Prior version examples are archived into branches:
 
+- [`v7`](https://github.com/remix-run/react-router-examples/tree/v7)
 - [`v6`](https://github.com/remix-run/react-router-examples/tree/v6)
