@@ -20,13 +20,14 @@ async function createServer() {
     let { createServer: createViteServer } = await import("vite");
     vite = await createViteServer({
       root,
+      appType: "custom",
       server: { middlewareMode: "ssr" },
     });
 
     app.use(vite.middlewares);
   } else {
     app.use(require("compression")());
-    app.use(express.static(resolve("dist/client")));
+    app.use(express.static(resolve("dist/client"), { index: false }));
   }
 
   app.use("*", async (req, res) => {
